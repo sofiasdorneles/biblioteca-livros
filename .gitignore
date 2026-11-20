@@ -1,0 +1,12 @@
+# Arquivos gerados pelo NetBeans
+/build/
+/dist/
+
+# Configurações privadas
+/nbproject/private/
+
+# Arquivos compilados
+*.class
+
+# Configurações locais
+config.properties
