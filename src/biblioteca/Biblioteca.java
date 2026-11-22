@@ -10,7 +10,7 @@ public class Biblioteca {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaBiblioteca().setVisible(true);
+                new TelaInicial().setVisible(true);
             }
         });
 

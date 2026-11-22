@@ -30,7 +30,8 @@ public class TelaBiblioteca extends javax.swing.JFrame {
     tblLivros.getColumnModel().getColumn(3).setPreferredWidth(120);
     tblLivros.getColumnModel().getColumn(4).setPreferredWidth(60);
 
-    setSize(900, 600);
+    setSize(800, 550);
+    setResizable(false);
     setLocationRelativeTo(null);
     
     atualizarTabela();
@@ -90,21 +91,28 @@ private void atualizarTabela() {
         txtPesquisa = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Sistema de Cadastro de Livros");
         setBackground(new java.awt.Color(221, 221, 221));
         setPreferredSize(new java.awt.Dimension(800, 800));
+        setResizable(false);
+        setSize(new java.awt.Dimension(650, 420));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(58, 58, 58));
-        jLabel1.setText("SISTEMA DE BIBLIOTECA");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel1.setText("Sistema de Biblioteca");
 
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel2.setText("Título:");
 
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel3.setText("Autor:");
 
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel4.setText("Gênero:");
 
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel5.setText("Ano de publicação:");
 
         txtTitulo.setBackground(new java.awt.Color(255, 255, 239));
@@ -116,22 +124,31 @@ private void atualizarTabela() {
 
         txtAno.setBackground(new java.awt.Color(255, 255, 239));
 
-        btnCadastrar.setBackground(new java.awt.Color(255, 255, 204));
+        btnCadastrar.setBackground(new java.awt.Color(118, 96, 68));
+        btnCadastrar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnCadastrar.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastrar.setText("Cadastrar");
         btnCadastrar.addActionListener(this::btnCadastrarActionPerformed);
 
-        btnEditar.setBackground(new java.awt.Color(255, 255, 204));
+        btnEditar.setBackground(new java.awt.Color(118, 96, 68));
+        btnEditar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnEditar.setForeground(new java.awt.Color(255, 255, 255));
         btnEditar.setText("Editar");
         btnEditar.addActionListener(this::btnEditarActionPerformed);
 
-        btnExcluir.setBackground(new java.awt.Color(255, 255, 204));
+        btnExcluir.setBackground(new java.awt.Color(118, 96, 68));
+        btnExcluir.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnExcluir.setForeground(new java.awt.Color(255, 255, 255));
         btnExcluir.setText("Excluir");
         btnExcluir.addActionListener(this::btnExcluirActionPerformed);
 
-        btnLimpar.setBackground(new java.awt.Color(255, 255, 204));
+        btnLimpar.setBackground(new java.awt.Color(118, 96, 68));
+        btnLimpar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        btnLimpar.setForeground(new java.awt.Color(255, 255, 255));
         btnLimpar.setText("Limpar");
         btnLimpar.addActionListener(this::btnLimparActionPerformed);
 
+        tblLivros.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         tblLivros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -157,6 +174,7 @@ private void atualizarTabela() {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jLabel6.setText("Pesquisar (livro ou autor):");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -165,6 +183,15 @@ private void atualizarTabela() {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel6))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -186,7 +213,11 @@ private void atualizarTabela() {
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                             .addComponent(jLabel4)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGap(23, 23, 23)))
+                                .addGap(124, 124, 124))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(50, 50, 50)
                                 .addComponent(btnCadastrar)
@@ -196,21 +227,8 @@ private void atualizarTabela() {
                                 .addComponent(btnExcluir)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnLimpar)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6))
-                                .addGap(0, 104, Short.MAX_VALUE)))))
+                        .addGap(174, 174, 174)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(159, 159, 159)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnCadastrar, btnEditar, btnExcluir, btnLimpar});
@@ -247,7 +265,7 @@ private void atualizarTabela() {
                 .addGap(4, 4, 4)
                 .addComponent(txtPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 202, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnCadastrar, btnEditar, btnExcluir, btnLimpar});
